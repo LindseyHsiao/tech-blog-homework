@@ -3,8 +3,10 @@
 
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { //looks for index and renders hompage.handlebars
   res.render('homepage');
 });
+
+
 
 module.exports = router;

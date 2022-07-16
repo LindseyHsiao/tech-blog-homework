@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
       });
   });
 
-  //login 
+  //login-- is returning incorrect password
   router.post('/login', (req, res) => {
     // expects {username: 'lernantino', password: 'password1234'}
     User.findOne({
