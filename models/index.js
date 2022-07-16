@@ -15,11 +15,14 @@ Post.belongsTo(User, {
 Comment.belongsTo(Post,{
     foreignKey: "post_id",
     foreignKey: "user_id"
+    //onDelete: 'CASCADE' ?? does this work here?
   })
 
 //post has many comments
 Post.hasMany(Comment, {
     foreignKey: "user_id"
+        //onDelete: 'CASCADE' ?? does this work here?
+
 })
 
 
