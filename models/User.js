@@ -27,24 +27,6 @@ User.init(
                 len: [6],
             },
         },
-        // post_id: {
-        //     type: DataTypes.INTEGER,
-        //     //refrences the post models id
-        //     allowNull: true,
-        //     references: {
-        //         model: 'post',
-        //         key: 'id'
-        //     }
-        // },
-        // comment_id: {
-        //     type: DataTypes.INTEGER,
-        //     //refrences the category models id
-        //     allowNull: true,
-        //     references: {
-        //         model: 'comment',
-        //         key: 'id'
-        //     }
-        // }
     },
     {
         hooks: {
