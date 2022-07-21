@@ -1,6 +1,6 @@
 async function handleSignupSubmit(){
-const username =  document.getElementById('signup-username');
-const password =  document.getElementById('signup-password');
+const username =  document.getElementById('username-signup');
+const password =  document.getElementById('password-signup');
 
 fetch('/api/users', {
     method: 'POST', 

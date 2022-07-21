@@ -3,14 +3,14 @@
   <li>
     <article class="post">
       <div class="title">
-        <a href="/post/{{post.id}}" >{{post.title}}</a>
+        <a href="/dashboard/edit/{{post.id}}" >{{post.title}}</a>
       </div>
       <div class="meta">
-        Created by {{post.user.username}} on{{format_date post.createdAt}}
+        Created on{{format_date post.createdAt}}
       </div>
     </article>
   </li>
   {{/each}}
 </ol>
 
-{{!-- update template to be assignment specific --}}
+<a href="/dashboard/new"><button>Add New Post</button></a>
