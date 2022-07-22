@@ -22,7 +22,7 @@ router.use('/', withAuth, (req, res)=>{ //why not router.get?
 //New Route for new posts needs to have a handlebar form for submit and (js)
 
 //Edit Route for editing your posts and handlebar form for submit (js)
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => { 
   Post.findByPk(req.params.id, { //can these be deleted?
     attributes: [
       'id',
