@@ -1,4 +1,5 @@
-async function handleSignupSubmit(){
+ function handleSignupSubmit(event){
+    event.preventDefault()
 const username =  document.getElementById('username-signup');
 const password =  document.getElementById('password-signup');
 
@@ -10,8 +11,8 @@ fetch('/api/users', {
     }), 
     headers: { "Content-Type": "application/json"}
 }).then(function(){
-    document.location.replace('/')
+    document.location.replace('/dashboard')
 }).catch((err)=> console.log(err))
 }
 
-document.getElementById('signup-button').addEventListener('click', handleSignupSubmit)
+document.getElementById('signup-form').addEventListener('submit', handleSignupSubmit)

@@ -1,4 +1,6 @@
-async function handleLoginSubmit() {
+ function handleLoginSubmit(event) {
+    event.preventDefault();
+    
     const username = document.getElementById('username-login');
     const password = document.getElementById('password-login');
 
@@ -10,8 +12,8 @@ async function handleLoginSubmit() {
         }),
         headers: { "Content-Type": "application/json" }
     }).then(function () {
-        document.location.replace('/')
+        document.location.replace('/dashboard')
     }).catch((err) => console.log(err))
 }
 
-document.getElementById('login-button').addEventListener('click', handleLoginSubmit)
+document.getElementById('login-form').addEventListener('submit', handleLoginSubmit)

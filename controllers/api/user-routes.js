@@ -31,6 +31,8 @@ router.post('/login', (req, res) => {
       username: req.body.username
     }
   }).then(dbUserData => {
+    console.log(dbUserData)
+
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that username!' });
       return;
@@ -49,7 +51,10 @@ router.post('/login', (req, res) => {
    
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     })
-  });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });;
 });
 
 
