@@ -6,11 +6,10 @@
         <a href="/post/{{post.id}}" >{{post.title}}</a>
       </div>
       <div class="meta">
-        Created by {{post.user.username}} on{{format_date post.createdAt}}
+        Created by {{post.user.username}} on {{format_date post.createdAt}}
       </div>
     </article>
   </li>
   {{/each}}
 </ol>
 
-{{!-- update template to be assignment specific --}}
