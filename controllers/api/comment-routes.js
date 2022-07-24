@@ -3,7 +3,7 @@ const { Comment } = require('../../models');
 
 router.get('/', (req, res) => {
     Comment.findAll({
-        //attributes: ['id', 'title', 'content', 'created_at'],
+        //attributes: ['id', 'title', 'comment_text', 'created_at'],
         order: [['created_at', 'DESC']], //order property is assigned a nested array that orders by the created_at column in descending order
         // include: [
         //     {
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     // check the session
     if (req.session) {
         Comment.create({
-            comment_text: req.body.comment_text, //should this be content?
+            comment_text: req.body.comment_text, 
             user_id: req.body.user_id,
             post_id: req.body.post_id
         })

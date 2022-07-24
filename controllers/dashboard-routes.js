@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth =  require('../utils/auth')
 
-router.get('/', withAuth, (req, res)=>{ //why not router.get?
+router.get('/', withAuth, (req, res)=>{ 
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -20,6 +20,20 @@ router.get('/', withAuth, (req, res)=>{ //why not router.get?
 })
 
 //New Route for new posts needs to have a handlebar form for submit and (js)
+
+router.post('/', withAuth, (req, res) => {
+  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+  Post.create({
+    title: req.body.title,
+    content: req.body.content,
+    user_id: req.session.user_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //Edit Route for editing your posts and handlebar form for submit (js)
 router.get('/edit/:id', withAuth, (req, res) => { 
