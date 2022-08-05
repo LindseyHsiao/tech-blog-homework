@@ -2,13 +2,13 @@ function newPostSubmit(event){
     event.preventDefault();
   
     const title = document.getElementById('post-title');
-    const post_url = document.getElementById('post-url');
+    const body = document.getElementById('post-body');
   
     fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({
         title: title.value,
-        content: post_url.value
+        body: body.value
       }),
       headers: {'Content-Type': 'application/json'}
     }).then(function(){
