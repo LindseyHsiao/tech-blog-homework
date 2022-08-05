@@ -20,8 +20,7 @@ Tec Blog is a CMS-style blog site similar to a Wordpress site, where developers 
 
 ## Website
 
-https://github.com/LindseyHsiao/tech-blog-homework
-
+https://git.heroku.com/serene-cove-59348.git
 
 ## Contribution
 Made with ❤️ by Lindsey 
