@@ -16,6 +16,7 @@ Tec Blog is a CMS-style blog site similar to a Wordpress site, where developers 
 * Handlebars.js
 * Sequelize
 * Express-Session
+* Bcrypt
 
 ## Website
 
