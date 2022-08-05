@@ -5,8 +5,6 @@ const withAuth = require('../../utils/auth')
 //Create a new post
 router.post('/', withAuth, (req, res) => {
  
-
-    // expects {title: 'Taskmaster goes public!', 'post_url', user_id: 1}
     Post.create({title: req.body.title, body: req.body.body, user_id: req.session.user_id})
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

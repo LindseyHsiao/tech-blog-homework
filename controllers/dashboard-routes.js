@@ -22,7 +22,7 @@ router.get('/', withAuth, (req, res)=>{
 
 
 
-//Edit Route for editing your posts and handlebar form for submit (js)
+//Edit Route for editing your posts 
 router.get('/edit/:id', withAuth, (req, res) => { 
   Post.findByPk(req.params.id)
     .then(dbPostData => {

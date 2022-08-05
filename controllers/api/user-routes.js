@@ -4,7 +4,6 @@ const { User } = require('../../models');
 
 // POST /api/users
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', password: 'password1234'}
   User.create({
     username: req.body.username,
     password: req.body.password
@@ -25,7 +24,6 @@ router.post('/', (req, res) => {
 
 //Login /api/users/login
 router.post('/login', (req, res) => {
-  // expects {username: 'lernantino', password: 'password1234'}
   User.findOne({
     where: {
       username: req.body.username
@@ -60,9 +58,8 @@ router.post('/login', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-  // expects {username: 'Lernantino', password: 'password1234'}
 
-  // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
+  // if req.body has exact key/value pairs to match the model, you can just use `req.body` 
   User.update(req.body, {
     where: {
       id: req.params.id

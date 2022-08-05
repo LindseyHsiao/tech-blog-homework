@@ -3,14 +3,8 @@ const { Comment } = require('../../models');
 
 router.get('/', (req, res) => {
     Comment.findAll({
-        //attributes: ['id', 'title', 'comment_text', 'created_at'],
         order: [['created_at', 'DESC']], //order property is assigned a nested array that orders by the created_at column in descending order
-        // include: [
-        //     {
-        //         model: User,
-        //         attributes: ['username']
-        //     }
-        // ]
+      
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
