@@ -3,7 +3,7 @@
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post.post_url}}" >{{post.title}}</a>
+        <h2><a href='/post/{{post.id}}' >{{post.title}}</a></h2>
       </div>
       <div class="meta">
         Created by {{post.user.username}} on {{format_date post.createdAt}}
